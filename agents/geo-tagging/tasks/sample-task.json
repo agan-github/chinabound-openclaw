@@ -1,0 +1,21 @@
+{
+  "taskId": "task-geo-tagging-001",
+  "priority": "medium",
+  "rawObjects": [
+    {
+      "id": "geo-tagging-input-001",
+      "title": "Sample input for geo-tagging",
+      "description": "提取国家、省、市、景区、场馆、商圈等地理实体并标准化。"
+    }
+  ],
+  "context": {
+    "agentStage": "understand",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

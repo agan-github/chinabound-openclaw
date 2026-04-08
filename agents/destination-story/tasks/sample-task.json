@@ -1,0 +1,21 @@
+{
+  "taskId": "task-destination-story-001",
+  "priority": "medium",
+  "storyBrief": [
+    {
+      "id": "destination-story-input-001",
+      "title": "Sample input for destination-story",
+      "description": "生成国家地理风格的目的地故事、文化延展与文明互鉴叙事。"
+    }
+  ],
+  "context": {
+    "agentStage": "produce",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "yellow"
+  }
+}

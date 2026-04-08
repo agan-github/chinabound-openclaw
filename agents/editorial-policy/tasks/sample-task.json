@@ -1,0 +1,21 @@
+{
+  "taskId": "task-editorial-policy-001",
+  "priority": "medium",
+  "contentCandidates": [
+    {
+      "id": "editorial-policy-input-001",
+      "title": "Sample input for editorial-policy",
+      "description": "统一标题逻辑、品牌语气、栏目规范和编辑体例。"
+    }
+  ],
+  "context": {
+    "agentStage": "govern",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

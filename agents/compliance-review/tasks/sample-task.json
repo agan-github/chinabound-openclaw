@@ -1,0 +1,21 @@
+{
+  "taskId": "task-compliance-review-001",
+  "priority": "medium",
+  "reviewTargets": [
+    {
+      "id": "compliance-review-input-001",
+      "title": "Sample input for compliance-review",
+      "description": "审核敏感内容、跨境数据、用户隐私、商业承诺与政策口径。"
+    }
+  ],
+  "context": {
+    "agentStage": "govern",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

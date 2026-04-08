@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Linking AgentOutput",
+  "type": "object",
+  "required": [
+    "taskId",
+    "agentId",
+    "status",
+    "entityLinks"
+  ],
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "agentId": {
+      "const": "entity-linking"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "needs_review",
+        "blocked",
+        "error"
+      ]
+    },
+    "entityLinks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "handoffs": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../shared/schemas/agent-handoff.schema.json"
+      }
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "green",
+        "yellow",
+        "red"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    }
+  }
+}

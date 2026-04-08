@@ -1,0 +1,21 @@
+{
+  "taskId": "task-entity-linking-001",
+  "priority": "medium",
+  "rawObjects": [
+    {
+      "id": "entity-linking-input-001",
+      "title": "Sample input for entity-linking",
+      "description": "识别景点、机构、人物、活动等实体并关联知识对象。"
+    }
+  ],
+  "context": {
+    "agentStage": "understand",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

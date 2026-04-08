@@ -1,0 +1,21 @@
+{
+  "taskId": "task-freshness-conflict-checker-001",
+  "priority": "medium",
+  "candidateItems": [
+    {
+      "id": "freshness-conflict-checker-input-001",
+      "title": "Sample input for freshness-conflict-checker",
+      "description": "检查过期信息、冲突口径、死链和需更新项。"
+    }
+  ],
+  "context": {
+    "agentStage": "govern",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}
