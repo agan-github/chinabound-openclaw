@@ -1,4 +1,4 @@
-# ChinaBound OpenClaw Agents v3
+# ChinaBound OpenClaw Agents
 
 本工程是面向 ChinaBound 的 OpenClaw 多 agent 全量骨架，目标是支持“完全自动运行 + 低干预门控”的内容生产与自动化运营体系。
 
