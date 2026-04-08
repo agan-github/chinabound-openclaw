@@ -1,0 +1,21 @@
+{
+  "taskId": "task-social-signal-watcher-001",
+  "priority": "medium",
+  "monitorTargets": [
+    {
+      "id": "social-signal-watcher-input-001",
+      "title": "Sample input for social-signal-watcher",
+      "description": "监测公开社交平台热点与反馈，作为辅助信号发现话题与问题。"
+    }
+  ],
+  "context": {
+    "agentStage": "sense",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

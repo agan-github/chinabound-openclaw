@@ -1,0 +1,21 @@
+{
+  "taskId": "task-time-trigger-001",
+  "priority": "medium",
+  "scheduleEvents": [
+    {
+      "id": "time-trigger-input-001",
+      "title": "Sample input for time-trigger",
+      "description": "根据 cron、节庆、周末、夜间等窗口触发内容生成和推送。"
+    }
+  ],
+  "context": {
+    "agentStage": "trigger",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

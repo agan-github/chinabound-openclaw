@@ -1,0 +1,21 @@
+{
+  "taskId": "task-visual-script-001",
+  "priority": "medium",
+  "visualBrief": [
+    {
+      "id": "visual-script-input-001",
+      "title": "Sample input for visual-script",
+      "description": "为图解卡、短视频、社媒图文生成脚本和镜头结构。"
+    }
+  ],
+  "context": {
+    "agentStage": "produce",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

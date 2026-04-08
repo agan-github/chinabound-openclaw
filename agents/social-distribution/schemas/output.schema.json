@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Social Distribution AgentOutput",
+  "type": "object",
+  "required": [
+    "taskId",
+    "agentId",
+    "status",
+    "distributionResults"
+  ],
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "agentId": {
+      "const": "social-distribution"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "needs_review",
+        "blocked",
+        "error"
+      ]
+    },
+    "distributionResults": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "handoffs": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../shared/schemas/agent-handoff.schema.json"
+      }
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "green",
+        "yellow",
+        "red"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    }
+  }
+}

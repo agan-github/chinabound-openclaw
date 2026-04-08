@@ -1,0 +1,21 @@
+{
+  "taskId": "task-time-tagging-001",
+  "priority": "medium",
+  "rawObjects": [
+    {
+      "id": "time-tagging-input-001",
+      "title": "Sample input for time-tagging",
+      "description": "提取发布时间、活动时间、有效期、节庆窗口、时段属性。"
+    }
+  ],
+  "context": {
+    "agentStage": "understand",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

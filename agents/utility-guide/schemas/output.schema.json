@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Utility Guide AgentOutput",
+  "type": "object",
+  "required": [
+    "taskId",
+    "agentId",
+    "status",
+    "guideDrafts"
+  ],
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "agentId": {
+      "const": "utility-guide"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "needs_review",
+        "blocked",
+        "error"
+      ]
+    },
+    "guideDrafts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "handoffs": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../shared/schemas/agent-handoff.schema.json"
+      }
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "green",
+        "yellow",
+        "red"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    }
+  }
+}

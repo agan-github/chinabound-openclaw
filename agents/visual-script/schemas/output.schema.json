@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Visual Script AgentOutput",
+  "type": "object",
+  "required": [
+    "taskId",
+    "agentId",
+    "status",
+    "scriptDrafts"
+  ],
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "agentId": {
+      "const": "visual-script"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "needs_review",
+        "blocked",
+        "error"
+      ]
+    },
+    "scriptDrafts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "handoffs": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../shared/schemas/agent-handoff.schema.json"
+      }
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "green",
+        "yellow",
+        "red"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    }
+  }
+}

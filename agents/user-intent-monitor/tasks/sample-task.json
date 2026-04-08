@@ -1,0 +1,21 @@
+{
+  "taskId": "task-user-intent-monitor-001",
+  "priority": "medium",
+  "behaviorSignals": [
+    {
+      "id": "user-intent-monitor-input-001",
+      "title": "Sample input for user-intent-monitor",
+      "description": "分析站内搜索、问答、收藏、点击与跳失，识别用户需求缺口。"
+    }
+  ],
+  "context": {
+    "agentStage": "sense",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "taskId": "task-social-distribution-001",
+  "priority": "medium",
+  "socialPackages": [
+    {
+      "id": "social-distribution-input-001",
+      "title": "Sample input for social-distribution",
+      "description": "负责多平台社媒文案、短帖和短视频分发封装。"
+    }
+  ],
+  "context": {
+    "agentStage": "distribute",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}
