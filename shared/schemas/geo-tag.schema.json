@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GeoTag",
+  "type": "object",
+  "required": [
+    "entityId",
+    "country",
+    "region",
+    "city",
+    "granularity"
+  ],
+  "properties": {
+    "entityId": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "granularity": {
+      "type": "string",
+      "enum": [
+        "country",
+        "region",
+        "city",
+        "district",
+        "venue",
+        "poi"
+      ]
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    }
+  }
+}

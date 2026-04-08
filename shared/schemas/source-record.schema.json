@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceRecord",
+  "type": "object",
+  "required": [
+    "sourceId",
+    "name",
+    "tier",
+    "trustLevel",
+    "url",
+    "scope",
+    "crawlPolicy"
+  ],
+  "properties": {
+    "sourceId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "national",
+        "provincial",
+        "municipal",
+        "institutional",
+        "partner"
+      ]
+    },
+    "trustLevel": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "url": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "crawlPolicy": {
+      "type": "object",
+      "properties": {
+        "frequency": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "rss",
+            "sitemap",
+            "http",
+            "api",
+            "mail",
+            "manual"
+          ]
+        },
+        "requiresBrowser": {
+          "type": "boolean"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "retired"
+      ]
+    }
+  }
+}

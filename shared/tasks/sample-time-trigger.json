@@ -1,0 +1,11 @@
+{
+  "triggerId": "trg-time-001",
+  "triggerType": "cron",
+  "firedAt": "2026-04-08T06:00:00+08:00",
+  "priority": "medium",
+  "context": {
+    "workflow": "this-week-city-guide",
+    "city": "Shanghai",
+    "window": "weekly"
+  }
+}

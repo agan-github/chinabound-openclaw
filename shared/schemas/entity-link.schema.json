@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EntityLink",
+  "type": "object",
+  "required": [
+    "entityId",
+    "canonicalName",
+    "entityType"
+  ],
+  "properties": {
+    "entityId": {
+      "type": "string"
+    },
+    "canonicalName": {
+      "type": "string"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entityType": {
+      "type": "string",
+      "enum": [
+        "city",
+        "attraction",
+        "museum",
+        "event",
+        "hotel",
+        "restaurant",
+        "institution",
+        "person",
+        "campaign",
+        "transport"
+      ]
+    },
+    "relatedEntities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

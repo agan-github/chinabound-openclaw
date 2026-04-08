@@ -1,0 +1,11 @@
+{
+  "triggerId": "trg-source-001",
+  "triggerType": "source_update",
+  "firedAt": "2026-04-08T09:00:00+08:00",
+  "priority": "high",
+  "context": {
+    "sourceId": "beijing-museum-official",
+    "url": "https://example.org/exhibitions",
+    "reason": "new exhibition listing"
+  }
+}

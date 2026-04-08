@@ -1,0 +1,16 @@
+{
+  "id": "job-crawl-city-signals",
+  "name": "Crawl city official signals",
+  "cron": "15 * * * *",
+  "tz": "Asia/Shanghai",
+  "agentId": "public-source-crawler",
+  "session": "isolated",
+  "message": "Crawl approved municipal and venue-level sources for active ChinaBound cities.",
+  "delivery": {
+    "mode": "none"
+  },
+  "tags": [
+    "crawler",
+    "city"
+  ]
+}

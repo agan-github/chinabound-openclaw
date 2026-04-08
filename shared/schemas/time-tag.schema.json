@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TimeTag",
+  "type": "object",
+  "required": [
+    "entityId",
+    "effectiveStart",
+    "effectiveEnd",
+    "windowType"
+  ],
+  "properties": {
+    "entityId": {
+      "type": "string"
+    },
+    "effectiveStart": {
+      "type": "string"
+    },
+    "effectiveEnd": {
+      "type": "string"
+    },
+    "windowType": {
+      "type": "string",
+      "enum": [
+        "realtime",
+        "daily",
+        "weekly",
+        "monthly",
+        "seasonal",
+        "festival",
+        "campaign"
+      ]
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "allDay": {
+      "type": "boolean"
+    },
+    "recurrence": {
+      "type": "string"
+    }
+  }
+}

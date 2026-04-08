@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentHandoff",
+  "type": "object",
+  "required": [
+    "taskId",
+    "fromAgent",
+    "toAgent",
+    "purpose",
+    "payloadRef",
+    "priority"
+  ],
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "fromAgent": {
+      "type": "string"
+    },
+    "toAgent": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "payloadRef": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "urgent"
+      ]
+    },
+    "slaMinutes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

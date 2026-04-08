@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChinaBound Source Registry",
+  "type": "object",
+  "required": [
+    "version",
+    "entries"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sourceId",
+          "name",
+          "tier",
+          "trustLevel",
+          "url",
+          "scope",
+          "crawlPolicy",
+          "status"
+        ],
+        "properties": {
+          "sourceId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string"
+          },
+          "trustLevel": {
+            "type": "integer"
+          },
+          "country": {
+            "type": "string"
+          },
+          "province": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "crawlPolicy": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "requiresBrowser": {
+                "type": "boolean"
+              }
+            }
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

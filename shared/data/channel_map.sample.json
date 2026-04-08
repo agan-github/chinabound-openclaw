@@ -1,0 +1,34 @@
+{
+  "website": [
+    "city_guide",
+    "destination_story",
+    "list",
+    "campaign",
+    "merchant_page"
+  ],
+  "app": [
+    "nearby_card",
+    "trip_card",
+    "service_notice"
+  ],
+  "mini_program": [
+    "nearby_card",
+    "event_card",
+    "city_pass"
+  ],
+  "newsletter": [
+    "daily",
+    "weekly",
+    "monthly"
+  ],
+  "whatsapp": [
+    "alert",
+    "short_guide",
+    "faq"
+  ],
+  "social": [
+    "short_post",
+    "video_script",
+    "carousel_copy"
+  ]
+}

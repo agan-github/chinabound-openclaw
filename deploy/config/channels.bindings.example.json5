@@ -1,0 +1,29 @@
+{
+  channels: {
+    telegram: {
+      enabled: false,
+      dmPolicy: "allowlist",
+      allowFrom: ["tg:REPLACE_OWNER_ID"],
+      groups: { "*": { requireMention: true } },
+      accounts: {
+        default: {
+          name: "ChinaBound main",
+          botToken: "REPLACE_MAIN_BOT_TOKEN"
+        },
+        alerts: {
+          name: "ChinaBound alerts",
+          botToken: "REPLACE_ALERTS_BOT_TOKEN"
+        },
+        review: {
+          name: "ChinaBound review",
+          botToken: "REPLACE_REVIEW_BOT_TOKEN"
+        }
+      }
+    }
+  },
+  bindings: [
+    { agentId: "chief-orchestrator", match: { channel: "telegram", accountId: "default" } },
+    { agentId: "messaging", match: { channel: "telegram", accountId: "alerts" } },
+    { agentId: "human-gatekeeper", match: { channel: "telegram", accountId: "review" } }
+  ]
+}

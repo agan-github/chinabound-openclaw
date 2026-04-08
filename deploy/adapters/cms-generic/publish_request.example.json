@@ -1,0 +1,17 @@
+{
+  "taskId": "task-demo-001",
+  "channel": "website",
+  "contentType": "city_guide",
+  "locale": "en",
+  "title": "48 Hours in Beijing for First-Time Visitors",
+  "slug": "48-hours-beijing-first-time-visitors",
+  "status": "draft",
+  "bodyMarkdown": "# Placeholder body",
+  "metadata": {
+    "city": "Beijing",
+    "sourceRefs": [
+      "src-001"
+    ]
+  },
+  "dryRun": true
+}

@@ -1,0 +1,32 @@
+{
+  "defaultTimeZone": "Asia/Shanghai",
+  "supportedTimeZones": [
+    "Asia/Shanghai",
+    "Europe/London",
+    "America/New_York",
+    "Asia/Singapore"
+  ],
+  "seasonBuckets": [
+    "spring",
+    "summer",
+    "autumn",
+    "winter"
+  ],
+  "timeWindows": [
+    "today",
+    "tomorrow",
+    "this_week",
+    "this_month",
+    "holiday_window",
+    "nightlife_window"
+  ],
+  "geoScopes": [
+    "country",
+    "province",
+    "city",
+    "district",
+    "venue",
+    "poi",
+    "nearby_radius"
+  ]
+}

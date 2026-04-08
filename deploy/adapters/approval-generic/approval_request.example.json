@@ -1,0 +1,11 @@
+{
+  "ticketId": "review-001",
+  "riskLevel": "yellow",
+  "requestedBy": "human-gatekeeper",
+  "assigneeGroup": "editorial-review",
+  "summary": "Please review weekly Xi'an digest before release.",
+  "artifacts": [
+    "/workspace/output/review-001.md"
+  ],
+  "deadline": "2026-04-10T10:00:00+08:00"
+}

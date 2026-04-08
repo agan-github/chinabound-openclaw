@@ -1,0 +1,12 @@
+{
+  "taskId": "deploy-checklist-001",
+  "taskType": "deployment_checklist",
+  "items": [
+    "fill auth profiles",
+    "fill channel allowlists",
+    "populate source registry",
+    "install cron jobs",
+    "run dry-run publishing test",
+    "run human review test"
+  ]
+}

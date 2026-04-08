@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FeedItem",
+  "type": "object",
+  "required": [
+    "itemId",
+    "sourceId",
+    "url",
+    "title",
+    "capturedAt",
+    "rawText"
+  ],
+  "properties": {
+    "itemId": {
+      "type": "string"
+    },
+    "sourceId": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "capturedAt": {
+      "type": "string"
+    },
+    "publishedAt": {
+      "type": "string"
+    },
+    "rawText": {
+      "type": "string"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "language": {
+      "type": "string"
+    }
+  }
+}

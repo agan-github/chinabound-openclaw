@@ -1,0 +1,27 @@
+{
+  "assignmentId": "asg-001",
+  "goal": "Create a weekly guide for first-time international visitors in Shanghai.",
+  "audience": [
+    "first_time_visitors",
+    "culture_seekers"
+  ],
+  "format": "weekly_city_guide",
+  "priority": "high",
+  "geoScope": [
+    "Shanghai"
+  ],
+  "timeWindow": {
+    "start": "2026-04-08",
+    "end": "2026-04-14"
+  },
+  "sourceRefs": [
+    "src-shanghai-culture-bureau",
+    "src-trip-partner-01"
+  ],
+  "constraints": {
+    "language": [
+      "en"
+    ],
+    "riskLevel": "yellow"
+  }
+}

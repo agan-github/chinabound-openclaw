@@ -1,0 +1,16 @@
+{
+  "id": "job-crawl-national-signals",
+  "name": "Crawl national official signals",
+  "cron": "*/30 * * * *",
+  "tz": "Asia/Shanghai",
+  "agentId": "public-source-crawler",
+  "session": "isolated",
+  "message": "Crawl approved national-level official sources and write structured updates for downstream tagging.",
+  "delivery": {
+    "mode": "none"
+  },
+  "tags": [
+    "crawler",
+    "national"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RiskReview",
+  "type": "object",
+  "required": [
+    "reviewId",
+    "riskLevel",
+    "dimensions",
+    "decision"
+  ],
+  "properties": {
+    "reviewId": {
+      "type": "string"
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "green",
+        "yellow",
+        "red"
+      ]
+    },
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "editorial": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "policy": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "privacy": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "commercial": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "copyright": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        }
+      }
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "auto_release",
+        "needs_review",
+        "manual_only",
+        "reject"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

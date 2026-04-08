@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TriggerEvent",
+  "type": "object",
+  "required": [
+    "triggerId",
+    "triggerType",
+    "firedAt",
+    "context"
+  ],
+  "properties": {
+    "triggerId": {
+      "type": "string"
+    },
+    "triggerType": {
+      "type": "string",
+      "enum": [
+        "cron",
+        "geo",
+        "behavior",
+        "source_update",
+        "manual"
+      ]
+    },
+    "firedAt": {
+      "type": "string"
+    },
+    "context": {
+      "type": "object"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "urgent"
+      ]
+    }
+  }
+}

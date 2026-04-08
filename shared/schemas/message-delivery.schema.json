@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Message Delivery Request",
+  "type": "object",
+  "required": [
+    "taskId",
+    "target",
+    "messageType",
+    "body"
+  ],
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "target": {
+      "type": "object"
+    },
+    "messageType": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "dryRun": {
+      "type": "boolean"
+    }
+  }
+}

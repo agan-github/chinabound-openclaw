@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Approval Ticket",
+  "type": "object",
+  "required": [
+    "ticketId",
+    "riskLevel",
+    "summary"
+  ],
+  "properties": {
+    "ticketId": {
+      "type": "string"
+    },
+    "riskLevel": {
+      "type": "string"
+    },
+    "requestedBy": {
+      "type": "string"
+    },
+    "assigneeGroup": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deadline": {
+      "type": "string"
+    }
+  }
+}

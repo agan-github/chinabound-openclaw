@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ConciergeCard",
+  "type": "object",
+  "required": [
+    "cardId",
+    "question",
+    "answer",
+    "language",
+    "validity"
+  ],
+  "properties": {
+    "cardId": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "validity": {
+      "type": "object"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "escalationRule": {
+      "type": "string"
+    }
+  }
+}

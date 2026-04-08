@@ -1,0 +1,9 @@
+{
+  "partnerRecordId": "offer-001",
+  "recordType": "merchant_offer",
+  "city": "Shanghai",
+  "locale": "en",
+  "title": "City pass add-on",
+  "validFrom": "2026-04-01T00:00:00Z",
+  "validTo": "2026-04-30T23:59:59Z"
+}

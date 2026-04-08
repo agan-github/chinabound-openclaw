@@ -1,0 +1,34 @@
+{
+  $include: [
+    "./auth.example.json5",
+    "./models.example.json5",
+    "./channels.bindings.example.json5",
+    "./cron.runtime.json5"
+  ],
+  gateway: {
+    reload: { mode: "hybrid", debounceMs: 300 }
+  },
+  identity: {
+    name: "ChinaBound",
+    theme: "official travel and culture operations system",
+    emoji: "🧭"
+  },
+  skills: {
+    load: {
+      extraDirs: ["~/chinabound-openclaw/shared-skills"],
+      watch: true,
+      watchDebounceMs: 250
+    },
+    install: { preferBrew: true, nodeManager: "npm" }
+  },
+  agents: {
+    defaults: {
+      skills: [
+        "chinabound-shared-standards",
+        "chinabound-routing-contracts",
+        "chinabound-safety-gates",
+        "chinabound-content-taxonomy"
+      ]
+    }
+  }
+}

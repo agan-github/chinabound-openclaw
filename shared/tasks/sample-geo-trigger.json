@@ -1,0 +1,16 @@
+{
+  "triggerId": "trg-geo-001",
+  "triggerType": "geo",
+  "firedAt": "2026-04-08T19:30:00+08:00",
+  "priority": "medium",
+  "context": {
+    "lat": 39.915,
+    "lng": 116.404,
+    "city": "Beijing",
+    "radiusKm": 3,
+    "userSegment": [
+      "first_time",
+      "culture"
+    ]
+  }
+}

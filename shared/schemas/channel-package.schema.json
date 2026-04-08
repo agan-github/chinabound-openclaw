@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChannelPackage",
+  "type": "object",
+  "required": [
+    "packageId",
+    "targetChannel",
+    "variant",
+    "contentRef"
+  ],
+  "properties": {
+    "packageId": {
+      "type": "string"
+    },
+    "targetChannel": {
+      "type": "string",
+      "enum": [
+        "website",
+        "app",
+        "mini_program",
+        "newsletter",
+        "whatsapp",
+        "push",
+        "social",
+        "concierge"
+      ]
+    },
+    "variant": {
+      "type": "string"
+    },
+    "contentRef": {
+      "type": "string"
+    },
+    "scheduledAt": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "string"
+    },
+    "deepLinks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

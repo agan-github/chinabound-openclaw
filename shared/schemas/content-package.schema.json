@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ContentPackage",
+  "type": "object",
+  "required": [
+    "packageId",
+    "contentType",
+    "headline",
+    "body",
+    "language",
+    "status"
+  ],
+  "properties": {
+    "packageId": {
+      "type": "string"
+    },
+    "contentType": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "dek": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "published"
+      ]
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

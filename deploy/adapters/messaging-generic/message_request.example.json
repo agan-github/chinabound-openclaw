@@ -1,0 +1,13 @@
+{
+  "taskId": "task-alert-001",
+  "target": {
+    "channel": "telegram",
+    "accountId": "alerts",
+    "to": "direct:123456"
+  },
+  "messageType": "alert",
+  "title": "Museum opening-hours update",
+  "body": "The venue will close at 17:00 today.",
+  "link": "https://example.org/item",
+  "dryRun": true
+}

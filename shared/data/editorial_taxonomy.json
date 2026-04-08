@@ -1,0 +1,21 @@
+{
+  "contentTypes": [
+    "utility_guide",
+    "destination_story",
+    "itinerary",
+    "list",
+    "newsletter",
+    "merchant_page",
+    "faq_card",
+    "short_video_script"
+  ],
+  "audiences": [
+    "first_time_visitors",
+    "family",
+    "luxury",
+    "culture_seekers",
+    "business_travelers",
+    "students",
+    "short_stay"
+  ]
+}

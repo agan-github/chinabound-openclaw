@@ -1,0 +1,9 @@
+{
+  cron: {
+    sessionRetention: "72h",
+    runLog: {
+      maxBytes: 10485760,
+      keepLines: 5000
+    }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "sourceId": "cn-tourism-ministry",
+    "name": "Ministry of Culture and Tourism of China",
+    "tier": "national",
+    "trustLevel": 5,
+    "url": "https://example.org/mct",
+    "scope": [
+      "policy",
+      "tourism",
+      "culture"
+    ],
+    "crawlPolicy": {
+      "frequency": "15m",
+      "method": "http",
+      "requiresBrowser": false
+    },
+    "status": "active"
+  },
+  {
+    "sourceId": "beijing-municipal-culture-tourism",
+    "name": "Beijing Municipal Bureau of Culture and Tourism",
+    "tier": "municipal",
+    "trustLevel": 5,
+    "url": "https://example.org/beijing-culture",
+    "scope": [
+      "events",
+      "city_guides",
+      "notices"
+    ],
+    "crawlPolicy": {
+      "frequency": "30m",
+      "method": "rss",
+      "requiresBrowser": false
+    },
+    "status": "active"
+  }
+]

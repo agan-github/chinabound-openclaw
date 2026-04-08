@@ -1,0 +1,16 @@
+{
+  "id": "job-source-registry-sync",
+  "name": "Source registry sync",
+  "cron": "0 */6 * * *",
+  "tz": "Asia/Shanghai",
+  "agentId": "official-source-registry",
+  "session": "isolated",
+  "message": "Sync official source registry health, freshness, and crawl policy changes for ChinaBound.",
+  "delivery": {
+    "mode": "none"
+  },
+  "tags": [
+    "registry",
+    "official-sources"
+  ]
+}

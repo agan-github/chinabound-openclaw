@@ -1,0 +1,18 @@
+{
+  "id": "job-daily-alerts",
+  "name": "Daily alerts",
+  "cron": "0 8 * * *",
+  "tz": "Asia/Shanghai",
+  "agentId": "messaging",
+  "session": "isolated",
+  "message": "Publish approved low-risk daily service alerts to the configured delivery channel.",
+  "delivery": {
+    "mode": "announce",
+    "channel": "telegram",
+    "to": "direct:REPLACE_OPERATOR_OR_CHANNEL"
+  },
+  "tags": [
+    "alerts",
+    "delivery"
+  ]
+}

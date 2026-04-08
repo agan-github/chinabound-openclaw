@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChinaBound Cron Job Manifest",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "cron",
+    "tz",
+    "agentId",
+    "session",
+    "message"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "cron": {
+      "type": "string"
+    },
+    "tz": {
+      "type": "string"
+    },
+    "agentId": {
+      "type": "string"
+    },
+    "session": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "delivery": {
+      "type": "object"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

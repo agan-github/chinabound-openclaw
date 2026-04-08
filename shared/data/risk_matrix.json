@@ -1,0 +1,17 @@
+{
+  "green": [
+    "opening_hours_update",
+    "weather_notice",
+    "weekly_event_digest"
+  ],
+  "yellow": [
+    "city_guide",
+    "merchant_recommendation",
+    "newsletter_roundup"
+  ],
+  "red": [
+    "policy_interpretation",
+    "major_ranking_release",
+    "sensitive_cultural_explainer"
+  ]
+}

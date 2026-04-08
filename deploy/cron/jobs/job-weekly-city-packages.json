@@ -1,0 +1,16 @@
+{
+  "id": "job-weekly-city-packages",
+  "name": "Weekly city packages",
+  "cron": "0 6 * * 1",
+  "tz": "Asia/Shanghai",
+  "agentId": "chief-orchestrator",
+  "session": "isolated",
+  "message": "Generate weekly city package tasks for all enabled destinations and route outputs for packaging.",
+  "delivery": {
+    "mode": "none"
+  },
+  "tags": [
+    "weekly",
+    "city-package"
+  ]
+}

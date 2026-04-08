@@ -1,0 +1,1345 @@
+{
+  "skills": {
+    "load": {
+      "extraDirs": [
+        "~/chinabound-openclaw/shared-skills"
+      ],
+      "watch": true,
+      "watchDebounceMs": 250
+    },
+    "install": {
+      "preferBrew": true,
+      "nodeManager": "npm"
+    }
+  },
+  "agents": {
+    "defaults": {
+      "skills": [
+        "chinabound-shared-standards",
+        "chinabound-routing-contracts",
+        "chinabound-safety-gates",
+        "chinabound-content-taxonomy"
+      ],
+      "sandbox": {
+        "mode": "all",
+        "backend": "docker",
+        "scope": "agent",
+        "workspaceAccess": "rw",
+        "workspaceRoot": "~/.openclaw/sandboxes",
+        "docker": {
+          "image": "openclaw-sandbox:bookworm-slim",
+          "containerPrefix": "chinabound-sbx-",
+          "workdir": "/workspace",
+          "readOnlyRoot": true,
+          "tmpfs": [
+            "/tmp",
+            "/var/tmp",
+            "/run"
+          ],
+          "network": "none"
+        }
+      },
+      "tools": {
+        "sessions": {
+          "visibility": "tree"
+        }
+      },
+      "model": {
+        "primary": "openai/gpt-5.4",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-6"
+        ]
+      },
+      "models": {
+        "openai/gpt-5.4": {
+          "alias": "GPT Primary"
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "alias": "Sonnet Fallback"
+        }
+      }
+    },
+    "list": [
+      {
+        "id": "chief-orchestrator",
+        "default": true,
+        "workspace": "~/chinabound-openclaw/agents/chief-orchestrator",
+        "agentDir": "~/.openclaw/agents/chief-orchestrator/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:messaging",
+            "group:memory",
+            "group:automation",
+            "group:agents",
+            "group:sessions"
+          ],
+          "deny": [
+            "group:web",
+            "browser"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ],
+        "subagents": {
+          "allowAgents": [
+            "*"
+          ]
+        }
+      },
+      {
+        "id": "official-source-registry",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/official-source-registry",
+        "agentDir": "~/.openclaw/agents/official-source-registry/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web"
+          ],
+          "deny": [
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "public-source-crawler",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/public-source-crawler",
+        "agentDir": "~/.openclaw/agents/public-source-crawler/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web",
+            "browser"
+          ],
+          "deny": [
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "partner-feed-ingestion",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/partner-feed-ingestion",
+        "agentDir": "~/.openclaw/agents/partner-feed-ingestion/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web"
+          ],
+          "deny": [
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "social-signal-watcher",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/social-signal-watcher",
+        "agentDir": "~/.openclaw/agents/social-signal-watcher/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web"
+          ],
+          "deny": [
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "user-intent-monitor",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/user-intent-monitor",
+        "agentDir": "~/.openclaw/agents/user-intent-monitor/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web"
+          ],
+          "deny": [
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "geo-tagging",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/geo-tagging",
+        "agentDir": "~/.openclaw/agents/geo-tagging/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "time-tagging",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/time-tagging",
+        "agentDir": "~/.openclaw/agents/time-tagging/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "entity-linking",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/entity-linking",
+        "agentDir": "~/.openclaw/agents/entity-linking/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "risk-classification",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/risk-classification",
+        "agentDir": "~/.openclaw/agents/risk-classification/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "knowledge-graph-update",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/knowledge-graph-update",
+        "agentDir": "~/.openclaw/agents/knowledge-graph-update/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "freshness-conflict-checker",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/freshness-conflict-checker",
+        "agentDir": "~/.openclaw/agents/freshness-conflict-checker/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web"
+          ],
+          "deny": [
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "assignment-planner",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/assignment-planner",
+        "agentDir": "~/.openclaw/agents/assignment-planner/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "destination-story",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/destination-story",
+        "agentDir": "~/.openclaw/agents/destination-story/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "utility-guide",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/utility-guide",
+        "agentDir": "~/.openclaw/agents/utility-guide/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "itinerary-composer",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/itinerary-composer",
+        "agentDir": "~/.openclaw/agents/itinerary-composer/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "list-awards",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/list-awards",
+        "agentDir": "~/.openclaw/agents/list-awards/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "commerce-content",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/commerce-content",
+        "agentDir": "~/.openclaw/agents/commerce-content/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "newsletter-editor",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/newsletter-editor",
+        "agentDir": "~/.openclaw/agents/newsletter-editor/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "ai-concierge-knowledge-card",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/ai-concierge-knowledge-card",
+        "agentDir": "~/.openclaw/agents/ai-concierge-knowledge-card/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "visual-script",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/visual-script",
+        "agentDir": "~/.openclaw/agents/visual-script/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "localization",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/localization",
+        "agentDir": "~/.openclaw/agents/localization/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "channel-packaging",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/channel-packaging",
+        "agentDir": "~/.openclaw/agents/channel-packaging/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "website-publishing",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/website-publishing",
+        "agentDir": "~/.openclaw/agents/website-publishing/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web",
+            "browser"
+          ],
+          "deny": [
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "app-mini-program",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/app-mini-program",
+        "agentDir": "~/.openclaw/agents/app-mini-program/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web",
+            "browser"
+          ],
+          "deny": [
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "messaging",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/messaging",
+        "agentDir": "~/.openclaw/agents/messaging/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:web",
+            "group:messaging",
+            "group:automation"
+          ],
+          "deny": [
+            "browser"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "social-distribution",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/social-distribution",
+        "agentDir": "~/.openclaw/agents/social-distribution/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web",
+            "browser"
+          ],
+          "deny": [
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "geo-trigger",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/geo-trigger",
+        "agentDir": "~/.openclaw/agents/geo-trigger/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:sessions",
+            "group:automation"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "time-trigger",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/time-trigger",
+        "agentDir": "~/.openclaw/agents/time-trigger/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:sessions",
+            "group:automation"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "compliance-review",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/compliance-review",
+        "agentDir": "~/.openclaw/agents/compliance-review/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "editorial-policy",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/editorial-policy",
+        "agentDir": "~/.openclaw/agents/editorial-policy/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "human-gatekeeper",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/human-gatekeeper",
+        "agentDir": "~/.openclaw/agents/human-gatekeeper/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:messaging"
+          ],
+          "deny": [
+            "group:web",
+            "browser"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "performance-analyst",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/performance-analyst",
+        "agentDir": "~/.openclaw/agents/performance-analyst/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "bridge"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:web",
+            "group:memory",
+            "group:sessions"
+          ],
+          "deny": [
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "optimization",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/optimization",
+        "agentDir": "~/.openclaw/agents/optimization/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory",
+            "group:sessions"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      },
+      {
+        "id": "audit-trace",
+        "default": false,
+        "workspace": "~/chinabound-openclaw/agents/audit-trace",
+        "agentDir": "~/.openclaw/agents/audit-trace/agent",
+        "sandbox": {
+          "mode": "all",
+          "scope": "agent",
+          "workspaceAccess": "rw",
+          "docker": {
+            "network": "none"
+          }
+        },
+        "tools": {
+          "profile": "coding",
+          "allow": [
+            "group:fs",
+            "group:runtime",
+            "group:memory",
+            "group:sessions"
+          ],
+          "deny": [
+            "group:web",
+            "browser",
+            "group:messaging"
+          ]
+        },
+        "skills": [
+          "chinabound-shared-standards",
+          "chinabound-routing-contracts",
+          "chinabound-safety-gates",
+          "chinabound-content-taxonomy",
+          "playbook"
+        ]
+      }
+    ]
+  },
+  "bindings": [
+    {
+      "agentId": "chief-orchestrator",
+      "match": {
+        "channel": "telegram",
+        "accountId": "default"
+      }
+    },
+    {
+      "agentId": "messaging",
+      "match": {
+        "channel": "telegram",
+        "accountId": "alerts"
+      }
+    },
+    {
+      "agentId": "human-gatekeeper",
+      "match": {
+        "channel": "telegram",
+        "accountId": "review"
+      }
+    }
+  ],
+  "identity": {
+    "name": "ChinaBound",
+    "theme": "official travel and culture operations system",
+    "emoji": "🧭"
+  },
+  "gateway": {
+    "reload": {
+      "mode": "hybrid",
+      "debounceMs": 300
+    }
+  },
+  "auth": {
+    "profiles": {
+      "openai:work": {
+        "provider": "openai",
+        "mode": "api_key"
+      },
+      "anthropic:work": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      }
+    },
+    "order": {
+      "openai": [
+        "openai:work"
+      ],
+      "anthropic": [
+        "anthropic:work"
+      ]
+    }
+  },
+  "cron": {
+    "sessionRetention": "72h",
+    "runLog": {
+      "maxBytes": 10485760,
+      "keepLines": 5000
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": false,
+      "dmPolicy": "allowlist",
+      "allowFrom": [
+        "tg:REPLACE_OWNER_ID"
+      ],
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "accounts": {
+        "default": {
+          "name": "ChinaBound main",
+          "botToken": "REPLACE_MAIN_BOT_TOKEN"
+        },
+        "alerts": {
+          "name": "ChinaBound alerts",
+          "botToken": "REPLACE_ALERTS_BOT_TOKEN"
+        },
+        "review": {
+          "name": "ChinaBound review",
+          "botToken": "REPLACE_REVIEW_BOT_TOKEN"
+        }
+      }
+    }
+  }
+}

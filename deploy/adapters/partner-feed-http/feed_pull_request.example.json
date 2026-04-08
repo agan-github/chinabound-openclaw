@@ -1,0 +1,12 @@
+{
+  "feedId": "partner-feed-001",
+  "baseUrl": "https://partner.example.local/api",
+  "path": "/offers",
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer REPLACE_ME"
+  },
+  "params": {
+    "updatedSince": "2026-04-01T00:00:00Z"
+  }
+}

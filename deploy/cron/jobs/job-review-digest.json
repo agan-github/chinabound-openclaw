@@ -1,0 +1,18 @@
+{
+  "id": "job-review-digest",
+  "name": "Review digest",
+  "cron": "0 9 * * *",
+  "tz": "Asia/Shanghai",
+  "agentId": "human-gatekeeper",
+  "session": "isolated",
+  "message": "Assemble yellow and red queue items into a human review digest and deliver to the review account.",
+  "delivery": {
+    "mode": "announce",
+    "channel": "telegram",
+    "to": "direct:REPLACE_REVIEW_TARGET"
+  },
+  "tags": [
+    "review",
+    "gatekeeper"
+  ]
+}
