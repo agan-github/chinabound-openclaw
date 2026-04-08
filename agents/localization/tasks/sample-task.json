@@ -1,0 +1,21 @@
+{
+  "taskId": "task-localization-001",
+  "priority": "medium",
+  "localizedInputs": [
+    {
+      "id": "localization-input-001",
+      "title": "Sample input for localization",
+      "description": "进行英文主稿和其他重点语种的跨文化改写与润色。"
+    }
+  ],
+  "context": {
+    "agentStage": "produce",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

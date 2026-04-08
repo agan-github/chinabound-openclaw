@@ -1,0 +1,21 @@
+{
+  "taskId": "task-messaging-001",
+  "priority": "medium",
+  "messagePackages": [
+    {
+      "id": "messaging-input-001",
+      "title": "Sample input for messaging",
+      "description": "负责邮件、WhatsApp、站内信和通知类触达内容的发送。"
+    }
+  ],
+  "context": {
+    "agentStage": "distribute",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

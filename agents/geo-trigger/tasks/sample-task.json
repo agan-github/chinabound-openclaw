@@ -1,0 +1,21 @@
+{
+  "taskId": "task-geo-trigger-001",
+  "priority": "medium",
+  "geoEvents": [
+    {
+      "id": "geo-trigger-input-001",
+      "title": "Sample input for geo-trigger",
+      "description": "根据用户位置或目的地位置触发附近内容和周边路线。"
+    }
+  ],
+  "context": {
+    "agentStage": "trigger",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

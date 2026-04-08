@@ -1,0 +1,21 @@
+{
+  "taskId": "task-itinerary-composer-001",
+  "priority": "medium",
+  "itineraryBrief": [
+    {
+      "id": "itinerary-composer-input-001",
+      "title": "Sample input for itinerary-composer",
+      "description": "按地点、时长、预算和人群偏好生成 itinerary 与路线卡。"
+    }
+  ],
+  "context": {
+    "agentStage": "produce",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

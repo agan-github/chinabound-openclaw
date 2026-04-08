@@ -1,0 +1,21 @@
+{
+  "taskId": "task-knowledge-graph-update-001",
+  "priority": "medium",
+  "knowledgeInputs": [
+    {
+      "id": "knowledge-graph-update-input-001",
+      "title": "Sample input for knowledge-graph-update",
+      "description": "把新增内容写入知识对象、事实卡、问答卡、路线卡与实体关系。"
+    }
+  ],
+  "context": {
+    "agentStage": "understand",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

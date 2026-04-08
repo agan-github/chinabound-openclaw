@@ -1,0 +1,21 @@
+{
+  "taskId": "task-list-awards-001",
+  "priority": "medium",
+  "listInputs": [
+    {
+      "id": "list-awards-input-001",
+      "title": "Sample input for list-awards",
+      "description": "维护 ChinaBound Select、Best of China 和垂类榜单候选池。"
+    }
+  ],
+  "context": {
+    "agentStage": "produce",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "yellow"
+  }
+}

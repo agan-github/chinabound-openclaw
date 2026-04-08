@@ -1,0 +1,21 @@
+{
+  "taskId": "task-human-gatekeeper-001",
+  "priority": "medium",
+  "approvalRequests": [
+    {
+      "id": "human-gatekeeper-input-001",
+      "title": "Sample input for human-gatekeeper",
+      "description": "在高风险或高价值任务节点发起人工审批和接管。"
+    }
+  ],
+  "context": {
+    "agentStage": "govern",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}
