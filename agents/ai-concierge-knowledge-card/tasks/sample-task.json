@@ -1,0 +1,21 @@
+{
+  "taskId": "task-ai-concierge-knowledge-card-001",
+  "priority": "medium",
+  "faqInputs": [
+    {
+      "id": "ai-concierge-knowledge-card-input-001",
+      "title": "Sample input for ai-concierge-knowledge-card",
+      "description": "沉淀 AI 礼宾可调用的问答卡、提醒卡、路线卡和服务卡。"
+    }
+  ],
+  "context": {
+    "agentStage": "produce",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}
