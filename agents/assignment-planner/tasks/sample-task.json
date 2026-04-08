@@ -1,0 +1,21 @@
+{
+  "taskId": "task-assignment-planner-001",
+  "priority": "medium",
+  "signals": [
+    {
+      "id": "assignment-planner-input-001",
+      "title": "Sample input for assignment-planner",
+      "description": "把信号转为选题、任务包、优先级与内容体裁建议。"
+    }
+  ],
+  "context": {
+    "agentStage": "produce",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

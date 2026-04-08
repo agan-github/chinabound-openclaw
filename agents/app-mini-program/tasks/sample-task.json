@@ -1,0 +1,21 @@
+{
+  "taskId": "task-app-mini-program-001",
+  "priority": "medium",
+  "appPackages": [
+    {
+      "id": "app-mini-program-input-001",
+      "title": "Sample input for app-mini-program",
+      "description": "负责 App、小程序、站内卡片和入口位的发布同步。"
+    }
+  ],
+  "context": {
+    "agentStage": "distribute",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

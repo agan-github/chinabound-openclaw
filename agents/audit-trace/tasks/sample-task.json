@@ -1,0 +1,21 @@
+{
+  "taskId": "task-audit-trace-001",
+  "priority": "medium",
+  "auditEvents": [
+    {
+      "id": "audit-trace-input-001",
+      "title": "Sample input for audit-trace",
+      "description": "记录来源、版本、决策路径、异常和回滚信息，支撑审计。"
+    }
+  ],
+  "context": {
+    "agentStage": "govern",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

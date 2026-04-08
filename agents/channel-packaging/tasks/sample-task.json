@@ -1,0 +1,21 @@
+{
+  "taskId": "task-channel-packaging-001",
+  "priority": "medium",
+  "contentPackages": [
+    {
+      "id": "channel-packaging-input-001",
+      "title": "Sample input for channel-packaging",
+      "description": "将内容拆分为官网、App、消息推送、社媒和礼宾版本。"
+    }
+  ],
+  "context": {
+    "agentStage": "distribute",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}
