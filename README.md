@@ -37,3 +37,25 @@
 - `.env.example`：常用环境变量样板
 
 建议先用 `deploy/config/openclaw.with-includes.example.json5` 对照修改，再将你们的真实账号、token、审批流和 CMS 接口填入。
+
+## 快速安装
+
+### 一键安装（curl）
+仓库中已经包含安装脚本 `scripts/install_chinabound_openclaw_from_github.sh`，可直接执行：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/agan-github/chinabound-openclaw/main/scripts/install_chinabound_openclaw_from_github.sh | bash
+```
+
+更稳妥的做法是先下载再执行：
+
+```bash
+curl -fsSL -o /tmp/install_chinabound_openclaw_from_github.sh https://raw.githubusercontent.com/agan-github/chinabound-openclaw/main/scripts/install_chinabound_openclaw_from_github.sh && bash /tmp/install_chinabound_openclaw_from_github.sh
+```
+
+### 安装后建议
+1. 检查 `~/.openclaw/openclaw.json` 或 `OPENCLAW_CONFIG_PATH` 是否已指向本工程配置。
+2. 补充 `.env`、渠道账号、CMS/审批/消息接口和官方信源白名单。
+3. 执行 `openclaw agents list --bindings` 检查 agent 路由。
+4. 执行 `openclaw channels status --probe` 检查通道状态。
+5. 首轮先用 dry run，不要直接开启真实外发。
