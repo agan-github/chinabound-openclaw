@@ -1,0 +1,21 @@
+{
+  "taskId": "task-website-publishing-001",
+  "priority": "medium",
+  "websitePackages": [
+    {
+      "id": "website-publishing-input-001",
+      "title": "Sample input for website-publishing",
+      "description": "负责官网、专题页、城市页和榜单页的发布与更新编排。"
+    }
+  ],
+  "context": {
+    "agentStage": "distribute",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}
