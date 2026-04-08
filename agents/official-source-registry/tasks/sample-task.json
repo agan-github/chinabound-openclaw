@@ -1,0 +1,21 @@
+{
+  "taskId": "task-official-source-registry-001",
+  "priority": "medium",
+  "sourceRegistry": [
+    {
+      "id": "official-source-registry-input-001",
+      "title": "Sample input for official-source-registry",
+      "description": "维护官方信源白名单、抓取频率、可信等级、更新策略与失效检测。"
+    }
+  ],
+  "context": {
+    "agentStage": "ingest",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

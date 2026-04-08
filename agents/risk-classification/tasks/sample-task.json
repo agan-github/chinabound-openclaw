@@ -1,0 +1,21 @@
+{
+  "taskId": "task-risk-classification-001",
+  "priority": "medium",
+  "reviewTargets": [
+    {
+      "id": "risk-classification-input-001",
+      "title": "Sample input for risk-classification",
+      "description": "按导向、事实、版权、商业、隐私等维度评定风险等级。"
+    }
+  ],
+  "context": {
+    "agentStage": "govern",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

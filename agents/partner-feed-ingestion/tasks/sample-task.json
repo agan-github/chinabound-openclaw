@@ -1,0 +1,21 @@
+{
+  "taskId": "task-partner-feed-ingestion-001",
+  "priority": "medium",
+  "partnerFeeds": [
+    {
+      "id": "partner-feed-ingestion-input-001",
+      "title": "Sample input for partner-feed-ingestion",
+      "description": "接入合作方 API、邮件订阅和内容同步接口，标准化合作数据。"
+    }
+  ],
+  "context": {
+    "agentStage": "ingest",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "taskId": "task-performance-analyst-001",
+  "priority": "medium",
+  "performanceInputs": [
+    {
+      "id": "performance-analyst-input-001",
+      "title": "Sample input for performance-analyst",
+      "description": "统计打开率、点击率、转化率、问答调用等效果指标。"
+    }
+  ],
+  "context": {
+    "agentStage": "optimize",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

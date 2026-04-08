@@ -1,0 +1,21 @@
+{
+  "taskId": "task-optimization-001",
+  "priority": "medium",
+  "performanceReports": [
+    {
+      "id": "optimization-input-001",
+      "title": "Sample input for optimization",
+      "description": "根据数据反馈优化模板、分发策略、选题结构和工作流。"
+    }
+  ],
+  "context": {
+    "agentStage": "optimize",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

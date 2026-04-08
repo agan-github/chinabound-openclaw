@@ -1,0 +1,21 @@
+{
+  "taskId": "task-public-source-crawler-001",
+  "priority": "medium",
+  "crawlRequests": [
+    {
+      "id": "public-source-crawler-input-001",
+      "title": "Sample input for public-source-crawler",
+      "description": "抓取官方站点、RSS、页面与公开 API，输出原始结构化内容。"
+    }
+  ],
+  "context": {
+    "agentStage": "ingest",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}

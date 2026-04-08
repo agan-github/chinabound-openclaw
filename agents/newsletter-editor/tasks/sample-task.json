@@ -1,0 +1,21 @@
+{
+  "taskId": "task-newsletter-editor-001",
+  "priority": "medium",
+  "newsletterBrief": [
+    {
+      "id": "newsletter-editor-input-001",
+      "title": "Sample input for newsletter-editor",
+      "description": "将多来源内容编组成 Daily、Weekly、Monthly newsletter。"
+    }
+  ],
+  "context": {
+    "agentStage": "produce",
+    "preferredLanguage": "zh-CN"
+  },
+  "upstreamRefs": [
+    "shared/tasks/sample-assignment.json"
+  ],
+  "constraints": {
+    "riskDefault": "green"
+  }
+}
